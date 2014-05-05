@@ -1,0 +1,14 @@
+---
+ - hosts: vmhosts
+   user: root
+   sudo: no
+   gather_facts: no
+   
+   vars:
+     ghettoVCB: '/vmfs/volumes/bak/vcb/ghettoVCB.sh'
+     invFile:   '/vmfs/volumes/bak/vcb/baklist'
+     logFile:   '/vmfs/volumes/bak/logs/daily/vcblog_`date+\%Y\%m\%d\%H\%M\%S`.log 2>&1'
+   
+   tasks:
+     - name: backup VMs on vmhosts
+       raw: ghettoVCB -f invFile -l logFile
