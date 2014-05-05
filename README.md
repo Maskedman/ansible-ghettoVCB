@@ -1,4 +1,4 @@
-ansible-ghettoVCB {#welcome}
+ansible-ghettoVCB
 ====================
 
 An ansible play for ghettoVCB
